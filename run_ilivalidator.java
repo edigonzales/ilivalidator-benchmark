@@ -13,7 +13,6 @@ import java.util.Date;
 public class run_ilivalidator {
 
     public static void main(String... args) {
-
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 
         long startTime = System.currentTimeMillis();
@@ -26,9 +25,8 @@ public class run_ilivalidator {
         settings.setValue(Validator.SETTING_ILIDIRS, ".");
 
 
-        for (int i=0; i<1; i++) {
+        for (int i=0; i<100; i++) {
             boolean valid = Validator.runValidation(new String[] {"Nutzungsplanung_Catalogue_CH_V1_2_20210901.xml", "Nutzungsplanung_LV95_V1_2.xtf"}, settings);
-            //boolean valid = Validator.runValidation(new String[] {"naturgefahren.xtf"}, settings);
         }
 
         long endTime = System.currentTimeMillis();
@@ -37,6 +35,5 @@ public class run_ilivalidator {
 
         long timeTaken = endTime - startTime;
         out.println("Time taken: " + timeTaken / 1000 + " seconds");
-
     }
 }
